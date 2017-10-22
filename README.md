@@ -136,6 +136,17 @@ CHANGES
 				$profile_update['deceased_date_logged_offline'] = null;
 			}
 			
+			
+		added code 2: 
+		
+		//Set today's date at Deceased date logged if the value is empty 
+		if (
+				! $values['deceased_date_logged_offline'] > 0 or
+				! $values['deceased_date_offline']
+			) {
+			$values['deceased_date_logged_offline'] = time();
+		}
+			
 	\network-site\addons\default\modules\network_settings\js\member_edit.js
 	
 		changed code: 
