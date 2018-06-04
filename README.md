@@ -1,8 +1,18 @@
+FOR PRIVACY AND CODE PROTECTING REASONS THIS IS A SIMPLIFIED VERSION OF CHANGES AND NEW FEATURES
+
+TASK DATE: 19.10.2017 - FINISHED: 20.10.2017
+
+TASK LEVEL: (EASY)  
+
+TASK SHORT DESCRIPTION: feature/task-1145-add-date-logged
+
+GITHUB REPOSITORY CODE: feature/task-1145-add-date-logged
+
 CHANGES
 
 	IN FILES:
 	
-	\network-site\addons\default\modules\bbusers\details.php
+	details.php
 	
 		added code 1 (upgrade):
 		
@@ -71,28 +81,31 @@ CHANGES
 		}
 		
 		
-		added code 2 (install):
-		
-		array(
-                'name'          => 'Deceased date logged',
-                'slug'          => 'deceased_date_logged_offline',
-                'type'          => 'datetime',
-                'extra'         => array(
-                    'start_date' => '-150Y',
-                    'use_time'  => 'no',
-                    'storage'   => 'unix',
-                    'input_type' => 'dropdown'
-                ),
-                'required'      => false,
-            ),
+		ADDED CODE II (install):
+			
+			array(
+					'name'          => 'Deceased date logged',
+					'slug'          => 'deceased_date_logged_offline',
+					'type'          => 'datetime',
+					'extra'         => array(
+						'start_date' => '-150Y',
+						'use_time'  => 'no',
+						'storage'   => 'unix',
+						'input_type' => 'dropdown'
+					),
+					'required'      => false,
+				),
 
 
-		added code 3 (update fields order)	
+			added code 3 (update fields order)	
+			
+			deceased_date_logged_offline' => 53,
 		
-		deceased_date_logged_offline' => 53,
+		
+		
 		
 			
-	\network-site\addons\default\modules\network_settings\views\members\form.php
+	form.php
 	
 		added and changed code 1
 		
@@ -124,7 +137,10 @@ CHANGES
 			
 			<?php endforeach; ?>
 			
-	\network-site\addons\default\modules\network_settings\controllers\members.php
+			
+			
+			
+	members.php
 	
 		changed code: 
 		
@@ -146,8 +162,11 @@ CHANGES
 			) {
 			$values['deceased_date_logged_offline'] = time();
 		}
+		
+		
+		
 			
-	\network-site\addons\default\modules\network_settings\js\member_edit.js
+	member_edit.js
 	
 		changed code: 
 		
